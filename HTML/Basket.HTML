@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/CSS/style_basket.css" type="text/css" />
+    <link rel="stylesheet" href="/CSS/reset.css" type="text/css" />
+    <script src="https://js.stripe.com/v3/"></script>
+    <script defer src="/JS/main.js"></script>
+    <!-- <script defer src="/JS/payments.js"></script> -->
+  </head>
+  <body>
+    <header class="header">
+      <!-- Навигационное меню -->
+      <div class="container">
+        <h1 class="title"><a href="/HTML/Sputnik.HTML">SPUTNIK</a></h1>
+        <div class="navbar">
+          <div id="menu" class="navbar__item menu">
+            <button id="burger" class="menu__burger-brn">
+              <span></span><span></span><span></span>
+            </button>
+
+            <ul class="menu-list">
+              <li class="menu__item-men">
+                <!-- <a href="" class="menu__link">Men &DownArrow;</a> -->
+                <a
+                  href="/HTML/Collections/Menswear/Catalog-men.HTML"
+                  class="menu__link"
+                  >Men &DownArrow;</a
+                >
+                <ul class="sub-menu__list-men">
+                  <li class="sub-menu__item">
+                    <a
+                      href="/HTML/Collections/Menswear/Products/Outerwear.HTML"
+                      class="sub-menu__link"
+                      >Outerwear</a
+                    >
+                  </li>
+                  <li class="sub-menu__item">
+                    <a
+                      href="/HTML/Collections/Menswear/Products/T-shirts.HTML"
+                      class="sub-menu__link"
+                      >T-shirts</a
+                    >
+                  </li>
+                  <li class="sub-menu__item">
+                    <a
+                      href="/HTML/Collections/Menswear/Products/Shirts.HTML"
+                      class="sub-menu__link"
+                      >Shirts</a
+                    >
+                  </li>
+                  <li class="sub-menu__item">
+                    <a
+                      href="/HTML/Collections/Menswear/Products/Jeans-and-trousers.HTML"
+                      class="sub-menu__link"
+                      >Jeans and trousers</a
+                    >
+                  </li>
+                  <li class="sub-menu__item">
+                    <a
+                      href="/HTML/Collections/Menswear/Products/Suits-and-jackets.HTML"
+                      class="sub-menu__link"
+                      >Suits and jackets</a
+                    >
+                  </li>
+                  <li class="sub-menu__item">
+                    <a
+                      href="/HTML/Collections/Menswear/Products/Sportwear.HTML"
+                      class="sub-menu__link"
+                      >Sportswear</a
+                    >
+                  </li>
+                  <li class="sub-menu__item">
+                    <a
+                      href="/HTML/Collections/Menswear/Products/Accessories.HTML"
+                      class="sub-menu__link"
+                      >Accessories</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li class="menu__item-women">
+                <a
+                  href="/HTML/Collections/Womenswear/Catalog-women.HTML"
+                  class="menu__link"
+                  >Women</a
+                >
+                <ul class="sub-menu__list-women">
+                  <li class="sub-menu__item">
+                    <a
+                      href="/HTML/Collections/Womenswear/Products/Outerwear.HTML"
+                      class="sub-menu__link"
+                      >Outerwear</a
+                    >
+                  </li>
+                  <li class="sub-menu__item">
+                    <a
+                      href="/HTML/Collections/Womenswear/Products/Dresses.HTML"
+                      class="sub-menu__link"
+                      >Dresses</a
+                    >
+                  </li>
+                  <li class="sub-menu__item">
+                    <a
+                      href="/HTML/Collections/Womenswear/Products/Skirts-and-shorts.HTML"
+                      class="sub-menu__link"
+                      >Skirts and shorts</a
+                    >
+                  </li>
+                  <li class="sub-menu__item">
+                    <a
+                      href="/HTML/Collections/Womenswear/Products/Blouses-and-Tops.HTML"
+                      class="sub-menu__link"
+                      >Blouses & Tops</a
+                    >
+                  </li>
+                  <li class="sub-menu__item">
+                    <a
+                      href="/HTML/Collections/Womenswear/Products/Jeans-and-trousers.HTML"
+                      class="sub-menu__link"
+                      >Jeans and trousers</a
+                    >
+                  </li>
+                  <li class="sub-menu__item">
+                    <a
+                      href="/HTML/Collections/Womenswear/Products/Suits-and-jackets.HTML"
+                      class="sub-menu__link"
+                    >
+                      Suits and jackets</a
+                    >
+                  </li>
+                  <li class="sub-menu__item">
+                    <a
+                      href="/HTML/Collections/Womenswear/Products/Sportswear.HTML"
+                      class="sub-menu__link"
+                      >Sportswear</a
+                    >
+                  </li>
+                  <li class="sub-menu__item">
+                    <a
+                      href="/HTML/Collections/Womenswear/Products/Accessories.HTML"
+                      class="sub-menu__link"
+                      >Accessories</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li class="menu__item-kids">
+                <a
+                  href="/HTML/Collections/Kidswear/Catalog-kids.HTML"
+                  class="menu__link"
+                  >Kids</a
+                >
+                <ul class="sub-menu__list-kids">
+                  <li class="sub-menu__item">
+                    <a
+                      href="/HTML/Collections/Kidswear/Products/Outerwear.HTML"
+                      class="sub-menu__link"
+                      >Outerwear</a
+                    >
+                  </li>
+                  <li class="sub-menu__item">
+                    <a
+                      href="/HTML/Collections/Kidswear/Products/T-shirts.HTML"
+                      class="sub-menu__link"
+                      >T-shirts</a
+                    >
+                  </li>
+                  <li class="sub-menu__item">
+                    <a
+                      href="/HTML/Collections/Kidswear/Products/Shirts.HTML"
+                      class="sub-menu__link"
+                      >Shirts</a
+                    >
+                  </li>
+                  <li class="sub-menu__item">
+                    <a
+                      href="/HTML/Collections/Kidswear/Products/Jeans-and-trousers.HTML"
+                      class="sub-menu__link"
+                      >Jeans and trousers</a
+                    >
+                  </li>
+                  <li class="sub-menu__item">
+                    <a
+                      href="/HTML/Collections/Kidswear/Products/Suits-and-jackets.HTML"
+                      class="sub-menu__link"
+                      >Suits and jackets</a
+                    >
+                  </li>
+                  <li class="sub-menu__item">
+                    <a
+                      href="/HTML/Collections/Kidswear/Products/Sportwear.HTML"
+                      class="sub-menu__link"
+                      >Sportswear</a
+                    >
+                  </li>
+                  <li class="sub-menu__item">
+                    <a
+                      href="/HTML/Collections/Kidswear/Products/Accessories.HTML"
+                      class="sub-menu__link"
+                      >Accessories</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li class="menu__item-auction">
+                <a
+                  href="/HTML/Collections/Auctionwear/Catalog-auction.HTML"
+                  class="menu__link"
+                  >Auction</a
+                >
+                <ul class="sub-menu__list-auction">
+                  <li>
+                    <a
+                      href="/HTML/Collections/Auctionwear/Products/Current-lots.HTML"
+                      class="sub-menu__link"
+                      >Current lots</a
+                    >
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+
+          <ul class="navbar__list">
+            <li class="navbar__item">
+              <div class="search-box">
+                <input
+                  class="search-txt"
+                  type="text"
+                  placeholder="Type to search"
+                />
+                <a href="#!" id="search" class="search"
+                  ><img
+                    src="/images/basket/search.png"
+                    alt="Search"
+                    width="30"
+                    height="30"
+                /></a>
+              </div>
+            </li>
+
+            <li class="navbar__item">
+              <a href="/HTML/Wishlist.HTML" class="wish-list"
+                ><img
+                  src="/images/basket/wishlist.png"
+                  alt="Wish list"
+                  width="30"
+                  height="30"
+              /></a>
+            </li>
+
+            <li class="navbar__item">
+              <a href="/HTML/Login.HTML" class="pers_area"
+                ><img
+                  src="/images/basket/personal_area.png"
+                  alt="Personal Area"
+                  width="30"
+                  height="30"
+              /></a>
+            </li>
+
+            <li class="navbar__item">
+              <button id="navigation-basket" class="burger-basket">
+                <img
+                  src="/images/main/basket.png"
+                  alt="Basket"
+                  width="30"
+                  height="30"
+                />
+              </button>
+              <div class="basket__menu">
+                <div class="basket__header">
+                  <div id="basket-exit" class="basket-exit">
+                    <button>&#8249;</button>
+                  </div>
+
+                  <div class="basket__title">BASKET</div>
+                </div>
+
+                <div class="basket__main">
+                  <img src="/images/main/basket.png" alt="" />
+                  <img src="/images/main/basket.png" alt="" />
+                  <img src="/images/main/basket.png" alt="" />
+                </div>
+
+                <div class="basket__footer">
+                  <div class="basket__prices">
+                    <p class="basket__amount">SUM</p>
+                    <p class="basket__price">0.00 RUB</p>
+                  </div>
+
+                  <div class="basket__checkouts">
+                    <a href="/HTML/Basket.HTML"
+                      ><button class="leave-a-comment">
+                        LEAVE A COMMENT
+                      </button></a
+                    >
+                    <a href="/HTML/Basket.HTML">
+                      <button class="check-out">CHECKOUT</button></a
+                    >
+                  </div>
+
+                  <ul class="payment-methods2">
+                    <li class="payment-methods__img">
+                      <img src="/images/catalog/jcb.png" alt="" />
+                    </li>
+                    <li class="payment-methods__img">
+                      <img src="/images/catalog/mastercard.png" alt="" />
+                    </li>
+                    <li class="payment-methods__img">
+                      <img src="/images/catalog/visa.png" alt="" />
+                    </li>
+
+                    <li class="payment-methods__img">
+                      <img src="/images/catalog/unionpay.png" alt="" />
+                    </li>
+                    <li class="payment-methods__img">
+                      <img src="/images/catalog/ethereum.png" alt="" />
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </header>
+
+    <main class="content">
+      <div class="content-left">
+        <div class="basket-shopping-cart__title">SHOPPING CART.</div>
+        <div class="shopping-cart__nominations">
+          <div class="shopping-cart__nomination">Product</div>
+          <div class="shopping-cart__nomination">Specifications</div>
+          <div class="shopping-cart__nomination">Size</div>
+          <div class="shopping-cart__nomination">Сondition</div>
+          <div class="shopping-cart__nomination">Price</div>
+        </div>
+        <div class="shopping__items">
+          <div class="shopping__item">
+            <a
+              class="shopping__item-img"
+              href="/HTML/Collections/Product/Product_1.HTML"
+              ><img src="/images/basket/image 1.png" alt=""
+            /></a>
+            <div class="shopping__item-specification">
+              <div>Burberry</div>
+              <div>Barn Jacket</div>
+            </div>
+            <div class="shopping__item-size">M</div>
+            <div class="shopping__item-condition">Excellent condition</div>
+            <div class="shopping__item-price">21000 RUB</div>
+            <button class="shopping__item-delete">
+              <img src="/images/basket/cross.png" alt="" />
+            </button>
+          </div>
+          <div class="shopping__item">
+            <a
+              class="shopping__item-img"
+              href="/HTML/Collections/Product/Product_3.HTML"
+              ><img src="/images/basket/image 3.png" alt=""
+            /></a>
+            <div class="shopping__item-specification">
+              <div>Burberry</div>
+              <div>Barn Jacket</div>
+            </div>
+            <div class="shopping__item-size">M</div>
+            <div class="shopping__item-condition">Excellent condition</div>
+            <div class="shopping__item-price">21000 RUB</div>
+            <button class="shopping__item-delete">
+              <img src="/images/basket/cross.png" alt="" />
+            </button>
+          </div>
+          <div class="shopping__item">
+            <a
+              class="shopping__item-img"
+              href="/HTML/Collections/Product/Product_12.HTML"
+              ><img src="/images/basket/image 12.png" alt=""
+            /></a>
+            <div class="shopping__item-specification">
+              <div>Burberry</div>
+              <div>Barn Jacket</div>
+            </div>
+            <div class="shopping__item-size">M</div>
+            <div class="shopping__item-condition">Excellent condition</div>
+            <div class="shopping__item-price">21000 RUB</div>
+            <button class="shopping__item-delete">
+              <img src="/images/basket/cross.png" alt="" />
+            </button>
+          </div>
+        </div>
+        <div class="content-left__footer">
+          <div class="content-left__footer__prices">
+            <div class="content-left__footer__subtotal">
+              Subtotal: <span>63000 RUB</span>
+            </div>
+            <div class="content-left__footer__shipping">
+              Shipping: <span>1000 RUB</span> 0 RUB
+            </div>
+            <div class="content-left__footer__total">
+              Total: <span>63000 RUB</span>
+            </div>
+          </div>
+        </div>
+        <a href="/HTML/Collections/Catalog.HTML"
+          ><button class="content-left__footer-back-to-catalog">
+            &#8249; Continue Shopping
+          </button></a
+        >
+        <div class="content-right__footer">
+          <button id="check-out" class="content-right__check-out">
+            <p>Check Out</p>
+          </button>
+        </div>
+      </div>
+      <!-- <div class="content-right">
+        <div class="content-container">
+          <div class="content-right__header">
+            <div class="content-right__title">Payment Info.</div>
+          </div>
+          <div class="content-right__main">
+            <span class="payment-methods-text">Payment-methods:</span>
+            <div class="payment-methods">
+              <div class="payment-method">
+                <button class="payment-method__credit-card">Credit Card</button>
+              </div>
+              <div class="payment-method">
+                <button class="payment-method__pay-pal">PayPal</button>
+              </div>
+            </div>
+            <div class="card-details">
+              <div class="card-detail">
+                Name on Card: <br />
+                <input class="" maxlength="25" placeholder="Ivan Ivanov" />
+              </div>
+              <div class="card-detail">
+                Card Number: <br />
+                <input
+                  class=""
+                  type="password"
+                  maxlength="16"
+                  placeholder="**** **** **** 1234"
+                />
+              </div>
+              <div class="card-detail">
+                Expiration Date: <br />
+                <input type="month" />
+              </div>
+
+              <div class="card-detail">
+                CVV: <br />
+                <input class="" maxlength="3" placeholder="XXX" />
+              </div>
+            </div>
+          </div>
+          <div class="content-right__footer">
+            <button id="check-out" class="content-right__check-out">
+              Check Out
+            </button>
+          </div>
+        </div>
+      </div> -->
+    </main>
+    <div class="cursor"></div>
+    <div class="cursor2"></div>
+
+    <script>
+      const cursor = document.querySelector(".cursor");
+      const cursor2 = document.querySelector(".cursor2");
+      document.addEventListener("mousemove", function (e) {
+        cursor.style.cssText = cursor2.style.cssText =
+          "left: " + e.clientX + "px; top: " + e.clientY + "px;";
+      });
+    </script>
+    <script defer>
+      var stripe = Stripe(
+        "pk_test_51N3DJpA2a73IXrezvkjkunbORmg17Cs4RTzAANoMo85zTILkEX2F3Ii2YbcC37CAI9SH7sUtSwaSZ7qDiN7XJAI200mHWqfRcz"
+      );
+      document
+        .getElementById("check-out")
+        .addEventListener("click", function () {
+          stripe
+            .redirectToCheckout({
+              lineItems: [
+                {
+                  price: "price_1N3DlCA2a73IXrez2HVRZi0T",
+                  quantity: 1,
+                },
+              ],
+              mode: "subscription",
+              successUrl: "http://example.com/success",
+              cancelUrl: "http://example.com/cancel",
+            })
+            .then(function (result) {
+              alert("Charge successful");
+            });
+        });
+    </script>
+  </body>
+</html>

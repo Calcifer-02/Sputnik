@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact us</title>
+    <link rel="stylesheet" href="/CSS/style_contact-us.css" type="text/css" />
+    <link rel="stylesheet" href="/CSS/reset.css" type="text/css" />
+    <!-- <script defer src="/node_modules/mailer.js"></script> -->
+
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
+    ></script>
+    <script type="text/javascript">
+      (function () {
+        emailjs.init("70fFNRMYvQDWxWjm5");
+      })();
+    </script>
+    <script defer src="/JS/email.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <div class="header__title">
+          <a href="/HTML/Sputnik.HTML">SPUTNIK</a>
+        </div>
+      </header>
+      <main class="content">
+        <div class="content__header">
+          <div class="content__subtitle">Get In Touch</div>
+          <div class="content__text">
+            Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+            accusa antium.
+          </div>
+        </div>
+        <div class="content__input">
+          <div class="content__name">
+            <input
+              type="text"
+              class="form-control"
+              id="name"
+              placeholder="Enter name"
+            />
+          </div>
+          <div class="content__email">
+            <input
+              type="email"
+              class="form-control"
+              id="email"
+              placeholder="Enter email"
+            />
+          </div>
+          <div class="content__message">
+            <textarea
+              cols="30"
+              rows="10"
+              id="message"
+              placeholder="Leave your message..."
+            ></textarea>
+          </div>
+          <!-- <button onclick="sendMail()">Send it Now</button> -->
+          <div class="content__btn">
+            <button id="content__button" onclick="sendMail()">
+              Send it Now
+            </button>
+          </div>
+        </div>
+      </main>
+      <footer class="footer">
+        <div class="footer-secondary">
+          <div class="footer-secondary__email">
+            <div class="footer-secondary__text">
+              GET TREND UPDATES, STYLE TIPS AND MORE
+            </div>
+            <div class="email-adress">
+              <input
+                placeholder="your email address here..."
+                class="footer-secondary__item"
+                style="width: 65%"
+                type="email"
+              />
+              <button class="footer-secondary__button">SIGN UP</button>
+            </div>
+          </div>
+
+          <div class="footer-secondary__wish-list">
+            <div class="footer-secondary__text">
+              Wish list <br />
+              Receive personal notifications <br />
+            </div>
+          </div>
+          <div class="footer-secondary__follow">
+            <p>Follow us on</p>
+            <ul class="social-media-list">
+              <li class="social-media-item">
+                <a href="#"
+                  ><img src="/images/contact-us/VK-Negative.png" alt=""
+                /></a>
+              </li>
+              <li class="social-media-item">
+                <a href="#"
+                  ><img src="/images/contact-us/Snapchat - Negative.png" alt=""
+                /></a>
+              </li>
+              <li class="social-media-item">
+                <a href="#"
+                  ><img src="/images/contact-us/Telegram - Negative.png" alt=""
+                /></a>
+              </li>
+              <li class="social-media-item">
+                <a href="#"
+                  ><img src="/images/contact-us/Twitter - Negative.png" alt=""
+                /></a>
+              </li>
+              <li class="social-media-item">
+                <a href="#"
+                  ><img src="/images/contact-us/YouTube - Negative.png" alt=""
+                /></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <ul class="payment-methods">
+          <div class="payment-methods__text">Payment methods:</div>
+          <li class="payment-methods__img">
+            <a href="#"><img src="/images/contact-us/jcb.png" alt="" /></a>
+          </li>
+          <li class="payment-methods__img">
+            <a href="#"
+              ><img src="/images/contact-us/mastercard.png" alt=""
+            /></a>
+          </li>
+          <li class="payment-methods__img">
+            <a href="#"><img src="/images/contact-us/visa.png" alt="" /></a>
+          </li>
+
+          <li class="payment-methods__img">
+            <a href="#"><img src="/images/contact-us/unionpay.png" alt="" /></a>
+          </li>
+          <li class="payment-methods__img">
+            <a href="#"><img src="/images/contact-us/ethereum.png" alt="" /></a>
+          </li>
+          <li class="payment-methods__img">
+            <a href="#"><img src="/images/contact-us/mir.png" alt="" /></a>
+          </li>
+          <li class="payment-methods__img">
+            <a href="#"
+              ><img src="/images/contact-us/western-union.png" alt=""
+            /></a>
+          </li>
+          <li class="payment-methods__img">
+            <a href="#"><img src="/images/contact-us/yandex.png" alt="" /></a>
+          </li>
+          <li class="payment-methods__img">
+            <a href="#"><img src="/images/contact-us/qiwi.png" alt="" /></a>
+          </li>
+          <li class="payment-methods__img">
+            <a href="#"
+              ><img src="/images/contact-us/apple-pay.png" alt=""
+            /></a>
+          </li>
+          <li class="payment-methods__img">
+            <a href="#"
+              ><img src="/images/contact-us/robokassa.png" alt=""
+            /></a>
+          </li>
+        </ul>
+      </footer>
+    </div>
+    <div class="cursor"></div>
+    <div class="cursor2"></div>
+
+    <script>
+      const cursor = document.querySelector(".cursor");
+      const cursor2 = document.querySelector(".cursor2");
+      document.addEventListener("mousemove", function (e) {
+        cursor.style.cssText = cursor2.style.cssText =
+          "left: " + e.clientX + "px; top: " + e.clientY + "px;";
+      });
+    </script>
+  </body>
+</html>
